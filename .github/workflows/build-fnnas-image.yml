@@ -224,6 +224,7 @@ on:
           - 6.12.y
           - 6.18.y
           - 6.12.y_6.18.y
+          - 6.12.41
       auto_kernel:
         description: "Auto use the latest kernel"
         required: false
