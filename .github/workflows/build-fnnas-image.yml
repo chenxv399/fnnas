@@ -246,7 +246,7 @@ on:
         options:
           - ophub
           - angel
-          - yourname
+          - chenxv399
 
 env:
   TZ: Etc/UTC
