@@ -12,12 +12,12 @@ on:
       fnnas_base_version:
         description: "Select fnnas base image version"
         required: false
-        default: "amlogic_453"
+        default: "amlogic_470"
         type: choice
         options:
+          - amlogic_470
           - amlogic_453
           - amlogic_389
-          - amlogic_338
           - allwinner_455
           - allwinner_335
           - allwinner_317
@@ -89,6 +89,7 @@ on:
           - orangepi-3b
           - orangepi-5-plus
           - orangepi-5b
+          - orangepi-zero2w
           - orangepi-zero3
           - panther-x2
           - photonicat
@@ -317,8 +318,7 @@ jobs:
 
           input_url="${{ inputs.fnnas_url }}"
           fnnas_base_version="${{ inputs.fnnas_base_version }}"
-          fnnas_img_id="${fnnas_base_version##*_}"
-          [[ -n "${fnnas_img_id}" ]] && build_tag="fnnas_v${fnnas_img_id}" || build_tag="fnnas_save"
+          [[ -n "${fnnas_base_version}" ]] && build_tag="fnnas_${fnnas_base_version}" || build_tag="fnnas_save"
 
           # -------------------------------------------------------
           # Case A: URL specified
